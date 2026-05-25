@@ -40,7 +40,7 @@ jobs:
     - name: Obtain CN IP lists
       run: |
         curl -LR -o- "https://raw.githubusercontent.com/misakaio/chnroutes2/master/chnroutes.txt" | grep -v "#" > dist/chnroutes2.txt
-        curl -LR -o dist/china6.txt "https://ispip.clang.cn/all_cn_ipv6.txt"
+        curl -LR -o dist/china6.txt "https://gaoyifan.github.io/china-operator-ip/china6.txt"
     
     - name: Merge and IP lists and remove duplicates
       run: |
@@ -88,6 +88,6 @@ jobs:
 
     - name: Purge CDN Cache
       run: |
-        curl -L https://purge.jsdelivr.net/gh/mkfd/GeoIP2-CN@release/CN-ip-cidr.txt > /dev/null 2>&1
-        curl -L https://purge.jsdelivr.net/gh/mkfd/GeoIP2-CN@release/Country.mmdb > /dev/null 2>&1
-        curl -L https://purge.jsdelivr.net/gh/mkfd/GeoIP2-CN@release/clash-rule-provider.yml > /dev/null 2>&1
+        curl -L https://purge.jsdelivr.net/gh/wi1dcard/GeoIP2-CN@release/CN-ip-cidr.txt > /dev/null 2>&1
+        curl -L https://purge.jsdelivr.net/gh/wi1dcard/GeoIP2-CN@release/Country.mmdb > /dev/null 2>&1
+        curl -L https://purge.jsdelivr.net/gh/wi1dcard/GeoIP2-CN@release/clash-rule-provider.yml > /dev/null 2>&1
